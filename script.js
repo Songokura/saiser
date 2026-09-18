@@ -8,9 +8,9 @@
 (function(){
 "use strict";
 /* ---- КОНТАКТЫ: единственное место замены. Заглушка до получения номера от клиента. ---- */
-var PHONE = "+77000000000";          /* для tel: */
-var PHONE_FMT = "+7 700 000-00-00";  /* для текста */
-var WA = "77000000000";              /* для wa.me */
+var PHONE = "+77074567575";          /* для tel: */
+var PHONE_FMT = "+7 707 456-75-75";  /* для текста */
+var WA = "77074567575";              /* для wa.me */
 
 var RED = matchMedia("(prefers-reduced-motion: reduce)").matches;
 var HAS_IO = typeof IntersectionObserver === "function";
