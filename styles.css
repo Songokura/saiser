@@ -356,7 +356,10 @@ html.js .rv.in{opacity:1;transform:none}
 
 /* контакты */
 .sec-kont{padding-bottom:clamp(48px,7vw,90px)}
-.kphone{display:block;font:400 clamp(40px,7.5vw,88px)/1 var(--fd);letter-spacing:.02em;color:var(--txt)}
+.kppl{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px)}
+.kp-n{font:600 11px/1 var(--ft);letter-spacing:.18em;text-transform:uppercase;color:var(--mute);margin-bottom:12px}
+.kphone{display:block;font:400 clamp(40px,5.2vw,64px)/1 var(--fd);letter-spacing:.02em;color:var(--txt);white-space:nowrap}
+@media(max-width:860px){.kppl{grid-template-columns:1fr}}
 .kont-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
 .kont-info{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:36px 0 0;padding-top:24px;border-top:1px solid rgba(13,18,32,.12)}
 .kont-info div{margin:0}

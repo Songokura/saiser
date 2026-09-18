@@ -33,7 +33,8 @@ document.addEventListener("click", function(e){
 
 /* телефон из констант - во все ссылки и подписи */
 function applyPhone(){
-  document.querySelectorAll('a[href^="tel:"]').forEach(function(a){ a.href = "tel:" + PHONE; });
+  /* data-num - второй номер (контакты), его не трогаем */
+  document.querySelectorAll('a[href^="tel:"]:not([data-num])').forEach(function(a){ a.href = "tel:" + PHONE; });
   document.querySelectorAll("[data-phone]").forEach(function(el){ el.textContent = PHONE_FMT; });
 }
 
@@ -99,7 +100,7 @@ function setWaLinks(){
       var box = a.closest(".svc"), h = box ? box.querySelector(".svc-t") : null;
       t = t.replace("{t}", h ? h.textContent.trim() : "");
     }
-    a.href = "https://wa.me/" + WA + "?text=" + encodeURIComponent(t);
+    a.href = "https://wa.me/" + (a.dataset.num || WA) + "?text=" + encodeURIComponent(t);
     a.target = "_blank"; a.rel = "noopener";
   });
 }
