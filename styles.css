@@ -252,14 +252,14 @@ html.js .rv.in{opacity:1;transform:none}
 
 /* сетка 12 систем */
 .grid12{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.c12{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:26px;min-height:150px;padding:20px 20px 18px;background:#fff;border-radius:14px;box-shadow:0 1px 0 rgba(13,18,32,.06);overflow:hidden;transition:transform .3s,box-shadow .3s}
+.c12{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:26px;min-height:150px;padding:20px 20px 18px;background:linear-gradient(155deg,#27416B 0%,#1B2B47 100%);color:#fff;border-radius:14px;box-shadow:0 1px 0 rgba(13,18,32,.1);overflow:hidden;transition:transform .3s,box-shadow .3s}
 .c12::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--acc);transform:scaleY(0);transform-origin:top;transition:transform .35s}
 .c12::after{content:"";position:absolute;left:3px;top:50%;width:0;height:1.5px;background:var(--acc);transition:width .35s .1s}
-.c12:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(13,18,32,.35)}
+.c12:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(13,18,32,.55);background:linear-gradient(155deg,#2D4B7C 0%,#1F3150 100%)}
 .c12:hover::before{transform:none}
 .c12:hover::after{width:22px}
 .c12 b{font:400 clamp(30px,3.2vw,42px)/1 var(--fd);text-transform:uppercase;letter-spacing:.02em}
-.c12 span{font-size:14px;line-height:1.35;color:var(--mute)}
+.c12 span{font-size:14px;line-height:1.35;color:rgba(214,224,240,.8)}
 .c12.lit{box-shadow:0 0 0 2px var(--acc)}
 @media(max-width:900px){.grid12{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:640px){.grid12{grid-template-columns:repeat(2,1fr);gap:10px}.c12{min-height:128px;padding:16px 14px 14px;gap:18px}.c12 span{font-size:13px}}
