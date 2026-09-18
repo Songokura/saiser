@@ -400,7 +400,7 @@ document.querySelectorAll(".lane-w").forEach(function(w){
 });
 
 /* ---------------- ФОРМА → WhatsApp ---------------- */
-var FORM_RU = {hello:"Здравствуйте! Заявка на расчёт сметы с сайта SAISER.", type:"Тип объекта", area:"Площадь", sys:"Системы", phone:"Телефон", none:"не выбрано"};
+var FORM_RU = {hello:"Здравствуйте! Заявка на расчёт сметы с сайта SAISER.", type:"Тип объекта", sys:"Системы", phone:"Телефон", none:"не выбрано"};
 var form = document.getElementById("form");
 if (form) form.addEventListener("submit", function(e){
   e.preventDefault();
@@ -411,9 +411,8 @@ if (form) form.addEventListener("submit", function(e){
   err.hidden = true;
   var F = (curLang() === "kk" && KK && KK.form) ? KK.form : FORM_RU;
   var sel = form.objtype, type = sel.value ? sel.options[sel.selectedIndex].textContent.trim() : F.none;
-  var area = form.area.value.trim();
   var sys = [].slice.call(form.querySelectorAll('input[name="sys"]:checked')).map(function(i){ var s = i.parentElement.querySelector("span"); return s ? s.textContent.trim() : i.value; });
-  var t = F.hello + "\n" + F.type + ": " + type + (area ? "\n" + F.area + ": " + area + " м²" : "") + "\n" + F.sys + ": " + (sys.length ? sys.join(", ") : F.none) + "\n" + F.phone + ": " + phone;
+  var t = F.hello + "\n" + F.type + ": " + type + "\n" + F.sys + ": " + (sys.length ? sys.join(", ") : F.none) + "\n" + F.phone + ": " + phone;
   ok.hidden = false;
   conv("lead");
   window.open("https://wa.me/" + WA + "?text=" + encodeURIComponent(t), "_blank", "noopener");
